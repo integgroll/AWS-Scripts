@@ -72,8 +72,8 @@ for module in modules_to_localize:
     pip.main(["install","-t",virtual_directory+"\\Lib\\site-packages", module])
 
 #Zipfile Section, shutil to cheat the folder addition to the zipfile and then proper python zip stuff for the individual file
-shutil.make_archive(file_name+"-lambda","zip",root_dir=virtual_directory+"\\Lib\\site-packages")
-with zipfile.ZipFile(file_name+"-lambda"+".zip","a") as myzip:
+shutil.make_archive(file_name+"","zip",root_dir=virtual_directory+"\\Lib\\site-packages")
+with zipfile.ZipFile(file_name+""+".zip","a") as myzip:
     myzip.write(file_name+".py")
 
 # Delete all of the old stuff? I mean not the literal worst idea ever. 
